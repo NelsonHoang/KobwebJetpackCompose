@@ -3,6 +3,7 @@ package com.omega.san.components
 import androidx.compose.runtime.Composable
 import com.omega.san.model.Section
 import com.omega.san.model.Theme
+import com.omega.san.style.LogoStyle
 import com.omega.san.style.NavigationItemStyle
 import com.omega.san.util.Constants.FONT_FAMILY
 import com.omega.san.util.Res
@@ -37,6 +38,7 @@ fun Header() {
 fun LeftSide() {
     Row {
         Image(
+            modifier = LogoStyle.toModifier(),
             src = Res.Image.LOGO,
             description = "Logo Image"
         )
