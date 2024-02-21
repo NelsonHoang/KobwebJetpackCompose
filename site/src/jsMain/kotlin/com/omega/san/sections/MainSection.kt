@@ -6,6 +6,7 @@ import com.omega.san.components.SocialBar
 import com.omega.san.model.Section
 import com.omega.san.model.Theme
 import com.omega.san.style.MainButtonStyle
+import com.omega.san.style.MainImageStyle
 import com.omega.san.util.Constants.FONT_FAMILY
 import com.omega.san.util.Constants.LOREM_IPSUM_TEXT
 import com.omega.san.util.Constants.SECTION_WIDTH
@@ -176,7 +177,7 @@ fun MainImage() {
         verticalArrangement = Arrangement.Bottom
     ) {
         Image(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = MainImageStyle.toModifier().fillMaxWidth(),
             src = Res.Image.main,
             description = "Main Image"
         )
