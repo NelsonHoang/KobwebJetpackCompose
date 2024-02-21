@@ -145,7 +145,7 @@ fun MainText(breakpoint: Breakpoint) {
             Button(
                 attrs = Modifier
                     .height(40.px)
-                    .width(0.px)
+                    .border(width = 0.px)
                     .borderRadius(r = 5.px)
                     .backgroundColor(Theme.Primary.rgb)
                     .color(Colors.White)
