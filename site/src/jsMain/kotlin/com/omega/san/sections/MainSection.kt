@@ -62,6 +62,7 @@ fun MainBackground() {
 fun MainContent(breakpoint: Breakpoint) {
     Column(
         modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Header()
@@ -78,7 +79,7 @@ fun MainContent(breakpoint: Breakpoint) {
                     ),
                 numColumns = numColumns(base = 1, md = 2)
             ) {
-                MainText(breakpoint)
+                MainText(breakpoint = breakpoint)
                 MainImage()
             }
         }
@@ -141,7 +142,7 @@ fun MainText(breakpoint: Breakpoint) {
             ) {
                 Text(LOREM_IPSUM_TEXT)
             }
-            Button (
+            Button(
                 attrs = Modifier
                     .height(40.px)
                     .width(0.px)
@@ -151,9 +152,9 @@ fun MainText(breakpoint: Breakpoint) {
                     .toAttrs()
             ) {
                 Link(
-                   modifier = Modifier
-                       .color(Colors.White)
-                       .textDecorationLine(TextDecorationLine.None),
+                    modifier = Modifier
+                        .color(Colors.White)
+                        .textDecorationLine(TextDecorationLine.None),
                     text = "Hire me",
                     path = Section.Contact.path
                 )
@@ -165,8 +166,10 @@ fun MainText(breakpoint: Breakpoint) {
 @Composable
 fun MainImage() {
     Column(
-        modifier = Modifier.fillMaxSize(80.percent),
-        verticalArrangement = Arrangement.Center
+        modifier = Modifier
+            .fillMaxSize(80.percent)
+            .fillMaxHeight(),
+        verticalArrangement = Arrangement.Bottom
     ) {
         Image(
             modifier = Modifier.fillMaxWidth(),
