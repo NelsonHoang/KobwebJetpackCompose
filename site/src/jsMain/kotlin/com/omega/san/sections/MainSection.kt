@@ -5,10 +5,12 @@ import com.omega.san.components.Header
 import com.omega.san.components.SocialBar
 import com.omega.san.model.Section
 import com.omega.san.model.Theme
+import com.omega.san.style.MainButtonStyle
 import com.omega.san.util.Constants.FONT_FAMILY
 import com.omega.san.util.Constants.LOREM_IPSUM_TEXT
 import com.omega.san.util.Constants.SECTION_WIDTH
 import com.omega.san.util.Res
+import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.css.TextDecorationLine
@@ -26,6 +28,7 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -143,12 +146,13 @@ fun MainText(breakpoint: Breakpoint) {
                 Text(LOREM_IPSUM_TEXT)
             }
             Button(
-                attrs = Modifier
+                attrs = MainButtonStyle.toModifier()
                     .height(40.px)
                     .border(width = 0.px)
                     .borderRadius(r = 5.px)
                     .backgroundColor(Theme.Primary.rgb)
                     .color(Colors.White)
+                    .cursor(Cursor.Pointer)
                     .toAttrs()
             ) {
                 Link(
