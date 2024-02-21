@@ -15,5 +15,6 @@ object Res {
     object Image {
         const val BACKGROUND = "background.svg"
         const val LOGO = "logo.svg"
+        const val main = "main_image.png"
     }
 }

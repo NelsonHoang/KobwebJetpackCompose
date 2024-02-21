@@ -79,6 +79,7 @@ fun MainContent(breakpoint: Breakpoint) {
                 numColumns = numColumns(base = 1, md = 2)
             ) {
                 MainText(breakpoint)
+                MainImage()
             }
         }
     }
@@ -143,6 +144,7 @@ fun MainText(breakpoint: Breakpoint) {
             Button (
                 attrs = Modifier
                     .height(40.px)
+                    .width(0.px)
                     .borderRadius(r = 5.px)
                     .backgroundColor(Theme.Primary.rgb)
                     .color(Colors.White)
@@ -157,5 +159,19 @@ fun MainText(breakpoint: Breakpoint) {
                 )
             }
         }
+    }
+}
+
+@Composable
+fun MainImage() {
+    Column(
+        modifier = Modifier.fillMaxSize(80.percent),
+        verticalArrangement = Arrangement.Center
+    ) {
+        Image(
+            modifier = Modifier.fillMaxWidth(),
+            src = Res.Image.main,
+            description = "Main Image"
+        )
     }
 }
