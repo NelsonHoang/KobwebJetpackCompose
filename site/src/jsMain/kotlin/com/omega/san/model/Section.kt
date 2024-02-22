@@ -7,32 +7,34 @@ enum class Section(
     val path: String
 ) {
     Home(
-        id="home",
-        title="Home",
+        id = "home",
+        title = "Home",
         subtitle = "",
-        path= "#home"),
+        path = "#home"
+    ),
     About(
-        id="about",
-        title="About Me",
+        id = "about",
+        title = "About Me",
         subtitle = "Why Hire Me?",
-        path= "#about"),
+        path = "#about"
+    ),
     Service(
-        id="service",
-        title="Service",
+        id = "service",
+        title = "Service",
         subtitle = "I'm Good at",
-        path= "#service"
+        path = "#service"
     ),
     Portfolio(
-        id="portfolio",
-        title="Portfolio",
+        id = "portfolio",
+        title = "Portfolio",
         subtitle = "My Work",
-        path= "#portfolio"
+        path = "#portfolio"
     ),
     Experience(
-        id="experience",
-        title="Experience",
+        id = "experience",
+        title = "Experience",
         subtitle = "Work Experience",
-        path= "#experience"
+        path = "#experience"
     ),
     Contact(
         id = "contact",

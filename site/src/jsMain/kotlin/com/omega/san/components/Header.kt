@@ -48,7 +48,8 @@ fun LeftSide(breakpoint: Breakpoint) {
             FaBars(
                 modifier = Modifier.margin(
                     right = 15.px,
-                    bottom = 6.px),
+                    bottom = 6.px
+                ),
                 size = IconSize.XL
             )
         }
@@ -65,11 +66,12 @@ fun LeftSide(breakpoint: Breakpoint) {
 fun RightSide() {
     Row(
         modifier = Modifier
-        .fillMaxWidth()
-        .borderRadius(r = 50.px)
-        .backgroundColor(Theme.LighterGray.rgb)
-        .padding(all = 20.px),
-        horizontalArrangement = Arrangement.End) {
+            .fillMaxWidth()
+            .borderRadius(r = 50.px)
+            .backgroundColor(Theme.LighterGray.rgb)
+            .padding(all = 20.px),
+        horizontalArrangement = Arrangement.End
+    ) {
         Section.entries.toTypedArray().take(6).forEach { section ->
             Link(
                 modifier = NavigationItemStyle.toModifier()
@@ -79,7 +81,8 @@ fun RightSide() {
                     .fontWeight(FontWeight.Normal)
                     .textDecorationLine(TextDecorationLine.None),
                 path = section.path,
-                text = section.title)
+                text = section.title
+            )
         }
     }
 }

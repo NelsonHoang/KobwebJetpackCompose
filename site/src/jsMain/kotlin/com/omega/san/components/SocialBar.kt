@@ -18,12 +18,8 @@ import org.jetbrains.compose.web.css.px
 @Composable
 fun SocialBar() {
     Column(
-        modifier =
-        Modifier
-            .margin(right = 25.px)
-            .padding(top = 25.px)
-            .minWidth(40.px)
-            .borderRadius(r = 20.px)
+        modifier = Modifier.margin(right = 25.px).padding(top = 25.px)
+            .minWidth(40.px).borderRadius(r = 20.px)
             .backgroundColor(Colors.White),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally

@@ -25,9 +25,7 @@ fun SkillBar(
     percentage: CSSSizeValue<CSSUnit.percent> = 50.percent
 ) {
     Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .maxWidth(500.px)
+        modifier = Modifier.fillMaxWidth().maxWidth(500.px)
             .padding(topBottom = 56.px)
     ) {
         Row(
@@ -35,19 +33,15 @@ fun SkillBar(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             P(
-                attrs = Modifier
-                    .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.Normal)
-                    .color(Theme.Secondary.rgb)
+                attrs = Modifier.fontFamily(FONT_FAMILY)
+                    .fontWeight(FontWeight.Normal).color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
                 Text(name)
             }
             P(
-                attrs = Modifier
-                    .fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.Normal)
-                    .color(Theme.Secondary.rgb)
+                attrs = Modifier.fontFamily(FONT_FAMILY)
+                    .fontWeight(FontWeight.Normal).color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
                 Text("${percentage.value}${percentage.unit}")
@@ -55,13 +49,11 @@ fun SkillBar(
         }
         Box(modifier = Modifier.fillMaxWidth()) {
             Box(
-                modifier = Modifier.fillMaxWidth()
-                    .height(progressBarHeight)
+                modifier = Modifier.fillMaxWidth().height(progressBarHeight)
                     .backgroundColor(Theme.LightGray.rgb)
             )
             Box(
-                modifier = Modifier
-                    .fillMaxWidth(percentage)
+                modifier = Modifier.fillMaxWidth(percentage)
                     .height(progressBarHeight)
                     .backgroundColor(Theme.Primary.rgb)
             )
