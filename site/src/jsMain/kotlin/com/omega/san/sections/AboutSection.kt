@@ -1,6 +1,7 @@
 package com.omega.san.sections
 
 import androidx.compose.runtime.Composable
+import com.omega.san.components.SectionTitle
 import com.omega.san.components.SkillBar
 import com.omega.san.model.Section
 import com.omega.san.util.Constants
@@ -21,8 +22,9 @@ fun AboutSection() {
             .padding(topBottom = 150.px),
         contentAlignment = Alignment.Center
     ) {
-        SkillBar(
-            name = "Creative"
+        SectionTitle(
+            section = Section.About,
+            alignment = Alignment.CenterHorizontally
         )
     }
 }
