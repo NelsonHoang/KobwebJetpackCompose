@@ -8,7 +8,7 @@ import com.omega.san.model.Theme
 import com.omega.san.style.MainButtonStyle
 import com.omega.san.style.MainImageStyle
 import com.omega.san.util.Constants.FONT_FAMILY
-import com.omega.san.util.Constants.LOREM_IPSUM_TEXT
+import com.omega.san.util.Constants.LOREM_IPSUM_SHORTEST
 import com.omega.san.util.Constants.SECTION_WIDTH
 import com.omega.san.util.Res
 import com.varabyte.kobweb.compose.css.Cursor
@@ -144,7 +144,7 @@ fun MainText(breakpoint: Breakpoint) {
                     .color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
-                Text(LOREM_IPSUM_TEXT)
+                Text(LOREM_IPSUM_SHORTEST)
             }
             Button(
                 attrs = MainButtonStyle.toModifier()
@@ -178,7 +178,7 @@ fun MainImage() {
     ) {
         Image(
             modifier = MainImageStyle.toModifier().fillMaxWidth(),
-            src = Res.Image.main,
+            src = Res.Image.MAIN,
             description = "Main Image"
         )
     }

@@ -8,14 +8,17 @@ object Constants {
     const val LINKEDIN_URL = "https://www.linkedin.com"
     const val TWITTER_URL = "https://www.twitter.com"
 
-    const val LOREM_IPSUM_TEXT =
-        "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis."
+    const val LOREM_IPSUM_SHORTEST =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    const val LOREM_IPSUM_SHORT =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 }
 
 object Res {
     object Image {
         const val BACKGROUND = "background.svg"
         const val LOGO = "logo.svg"
-        const val main = "main_image.png"
+        const val MAIN = "main_image.png"
+        const val ABOUT = "about_image.png"
     }
 }

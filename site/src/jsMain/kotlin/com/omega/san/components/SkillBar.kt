@@ -26,7 +26,7 @@ fun SkillBar(
 ) {
     Column(
         modifier = Modifier.fillMaxWidth().maxWidth(500.px)
-            .padding(topBottom = 56.px)
+            .padding(topBottom = 5.px)
     ) {
         Row(
             modifier = Modifier.fillMaxWidth().margin(5.px),
