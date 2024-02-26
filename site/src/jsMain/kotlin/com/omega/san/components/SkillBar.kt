@@ -25,7 +25,10 @@ fun SkillBar(
     percentage: CSSSizeValue<CSSUnit.percent> = 50.percent
 ) {
     Column(
-        modifier = Modifier.fillMaxWidth().maxWidth(500.px)
+        modifier = Modifier
+            .fillMaxWidth()
+            .margin(bottom = 10.px)
+            .maxWidth(500.px)
             .padding(topBottom = 5.px)
     ) {
         Row(
@@ -33,15 +36,21 @@ fun SkillBar(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             P(
-                attrs = Modifier.fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.Normal).color(Theme.Secondary.rgb)
+                attrs = Modifier
+                    .margin(topBottom = 0.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
                 Text(name)
             }
             P(
-                attrs = Modifier.fontFamily(FONT_FAMILY)
-                    .fontWeight(FontWeight.Normal).color(Theme.Secondary.rgb)
+                attrs = Modifier
+                    .margin(topBottom = 0.px)
+                    .fontFamily(FONT_FAMILY)
+                    .fontWeight(FontWeight.Normal)
+                    .color(Theme.Secondary.rgb)
                     .toAttrs()
             ) {
                 Text("${percentage.value}${percentage.unit}")
