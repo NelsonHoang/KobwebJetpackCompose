@@ -7,6 +7,7 @@ import com.omega.san.model.Section
 import com.omega.san.model.Skill
 import com.omega.san.model.Theme
 import com.omega.san.style.AboutImageStyle
+import com.omega.san.style.AboutTextStyle
 import com.omega.san.util.Constants
 import com.omega.san.util.Res
 import com.varabyte.kobweb.compose.css.FontStyle
@@ -54,8 +55,16 @@ fun AboutContent() {
             .maxWidth(1200.px),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        SimpleGrid(numColumns = numColumns(base = 1, md = 2)) {
-            AboutImage()
+        SimpleGrid(
+            modifier = Modifier.fillMaxWidth(
+                if (breakpoint >= Breakpoint.MD) 90.percent
+                else 100.percent
+            ),
+            numColumns = numColumns(base = 1, md = 2)
+        ) {
+            if (breakpoint >= Breakpoint.MD) {
+                AboutImage()
+            }
             AboutMe()
         }
     }
@@ -85,7 +94,7 @@ fun AboutMe() {
     ) {
         SectionTitle(section = Section.About)
         P(
-            attrs = Modifier
+            attrs = AboutTextStyle.toModifier()
                 .margin(topBottom = 25.px)
                 .maxWidth(500.px)
                 .fontFamily(Constants.FONT_FAMILY)

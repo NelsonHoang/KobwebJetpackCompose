@@ -4,6 +4,7 @@ import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.TransitionProperty
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
+import com.varabyte.kobweb.compose.ui.modifiers.opacity
 import com.varabyte.kobweb.compose.ui.modifiers.rotate
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import com.varabyte.kobweb.compose.ui.styleModifier
@@ -35,5 +36,17 @@ val AboutImageStyle by ComponentStyle {
                 r = 100.px
             )
             .rotate(10.deg)
+    }
+}
+
+val AboutTextStyle by ComponentStyle {
+    base {
+        Modifier
+            .opacity(50.percent)
+            .transition(CSSTransition(property = "opacity", duration = 200.ms))
+    }
+    hover {
+        Modifier
+            .opacity(100.percent)
     }
 }
