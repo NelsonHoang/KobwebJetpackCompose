@@ -3,6 +3,7 @@ package com.omega.san.components
 import androidx.compose.runtime.Composable
 import com.omega.san.model.Theme
 import com.omega.san.util.Constants.FONT_FAMILY
+import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -11,10 +12,7 @@ import com.varabyte.kobweb.compose.foundation.layout.Row
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.toAttrs
-import org.jetbrains.compose.web.css.CSSSizeValue
-import org.jetbrains.compose.web.css.CSSUnit
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -62,9 +60,16 @@ fun SkillBar(
                     .backgroundColor(Theme.LightGray.rgb)
             )
             Box(
-                modifier = Modifier.fillMaxWidth(percentage)
+                modifier = Modifier
+                    .fillMaxWidth(percentage)
                     .height(progressBarHeight)
                     .backgroundColor(Theme.Primary.rgb)
+                    .transition(
+                        CSSTransition(
+                            property = "width",
+                            duration = 1000.ms
+                        )
+                    )
             )
         }
     }

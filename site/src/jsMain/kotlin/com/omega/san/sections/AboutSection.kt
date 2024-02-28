@@ -1,6 +1,8 @@
 package com.omega.san.sections
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import com.omega.san.components.SectionTitle
 import com.omega.san.components.SkillBar
 import com.omega.san.model.Section
@@ -9,6 +11,7 @@ import com.omega.san.model.Theme
 import com.omega.san.style.AboutImageStyle
 import com.omega.san.style.AboutTextStyle
 import com.omega.san.util.Constants
+import com.omega.san.util.ObserveViewPortEntered
 import com.omega.san.util.Res
 import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -18,6 +21,8 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
@@ -88,6 +93,15 @@ fun AboutImage() {
 
 @Composable
 fun AboutMe() {
+    var viewportEntered by remember { mutableStateOf(false) }
+    ObserveViewPortEntered(
+        sectionId = Section.About.id,
+        distanceFromTop = 300.0,
+        onViewportEntered = {
+            viewportEntered = true
+        }
+    )
+
     Column(
         modifier = Modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center
@@ -108,8 +122,10 @@ fun AboutMe() {
         }
         Skill.entries.forEach { skill ->
             SkillBar(
-                name = skill.name,
-                percentage = skill.percentage
+                name = skill.title,
+                percentage =
+                if (viewportEntered) skill.percentage
+                else 0.percent
             )
         }
     }
