@@ -8,6 +8,7 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
 import org.w3c.dom.events.EventListener
 
 @Composable
@@ -43,4 +44,14 @@ fun ObserveViewPortEntered(
     }
 }
 
+suspend fun animatePercentage(
+    percent: Int,
+    delay : Long = 10L,
+    onUpdate: (Int) -> Unit
+) {
+    (0..percent).forEach {
+        delay(delay)
+        onUpdate(it)
+    }
+}
 const val EVENT_LISTENER_TYPE = "scroll"
