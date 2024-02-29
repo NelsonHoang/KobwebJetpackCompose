@@ -3,6 +3,7 @@ package com.omega.san.pages
 import androidx.compose.runtime.Composable
 import com.omega.san.sections.AboutSection
 import com.omega.san.sections.MainSection
+import com.omega.san.sections.PortfolioSection
 import com.omega.san.sections.ServiceSection
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -22,5 +23,6 @@ fun HomePage() {
         MainSection()
         AboutSection()
         ServiceSection()
+        PortfolioSection()
     }
 }
