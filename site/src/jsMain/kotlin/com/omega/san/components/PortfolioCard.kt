@@ -5,10 +5,10 @@ import com.omega.san.model.Portfolio
 import com.omega.san.model.Theme
 import com.omega.san.util.Constants
 import com.omega.san.util.Constants.WEBSITE
-import com.varabyte.kobweb.compose.css.FontStyle
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.ObjectFit
 import com.varabyte.kobweb.compose.css.TextDecorationLine
+import com.varabyte.kobweb.compose.css.Width
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -35,6 +35,7 @@ fun PortfolioCard(
     ) {
         Column(
             modifier = modifier
+                .width(Width.MaxContent)
         ) {
             Box(
                 modifier = Modifier
@@ -57,7 +58,6 @@ fun PortfolioCard(
                     .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(18.px)
                     .fontWeight(FontWeight.Bold)
-                    .fontStyle(FontStyle.Italic)
                     .toAttrs()
             ) {
                 Text(portfolio.title)
@@ -69,7 +69,6 @@ fun PortfolioCard(
                     .fontFamily(Constants.FONT_FAMILY)
                     .fontSize(14.px)
                     .fontWeight(FontWeight.Normal)
-                    .fontStyle(FontStyle.Italic)
                     .color(Theme.Secondary.rgb)
                     .opacity(50.percent)
                     .toAttrs()
