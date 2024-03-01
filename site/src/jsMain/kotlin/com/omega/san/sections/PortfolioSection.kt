@@ -63,7 +63,8 @@ fun PortfolioCards() {
             .scrollBehavior(ScrollBehavior.Smooth)) {
         Portfolio.entries.forEach { portfolio ->
             PortfolioCard(
-                modifier = Modifier.margin(right = 25.px),
+                modifier = Modifier.margin(
+                    right = if (portfolio != Portfolio.Five) 25.px else 0.px),
                 portfolio = portfolio
             )
         }
