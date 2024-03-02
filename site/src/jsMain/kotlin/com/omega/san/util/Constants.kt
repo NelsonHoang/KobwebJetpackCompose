@@ -34,9 +34,13 @@ object Res {
         const val ANDROID = "android_icon.svg"
         const val APPLE = "apple_icon.svg"
         const val BUSINESS = "business_icon.svg"
+        const val CHECKMARK = "checkmark_icon.svg"
         const val DESIGN = "design_icon.svg"
+        const val HAPPY = "happy_icon.svg"
         const val LINK = "link_icon.svg"
-        const val WEB = "web_icon.svg"
         const val SEO = "seo_icon.svg"
+        const val SHIELD = "shield_icon.svg"
+        const val USER = "user_icon.svg"
+        const val WEB = "web_icon.svg"
     }
 }
