@@ -18,7 +18,7 @@ import org.jetbrains.compose.web.css.px
 
 @Composable
 fun AchievementSection() {
-    val brekapoint = rememberBreakpoint()
+    val breakpoint = rememberBreakpoint()
     Box(
         modifier = Modifier
             .id(Section.Portfolio.id)
@@ -28,7 +28,7 @@ fun AchievementSection() {
             .backgroundColor(Theme.LighterGray.rgb),
         contentAlignment = Alignment.Center
     ) {
-        AchievementContent(brekapoint)
+        AchievementContent(breakpoint)
     }
 }
 
