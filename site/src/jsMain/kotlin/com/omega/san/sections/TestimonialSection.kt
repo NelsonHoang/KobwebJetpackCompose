@@ -11,6 +11,7 @@ import com.omega.san.model.Section
 import com.omega.san.model.Testimonial
 import com.omega.san.model.Theme
 import com.omega.san.util.Constants
+import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.Cursor
 import com.varabyte.kobweb.compose.css.Visibility
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -24,10 +25,7 @@ import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
-import org.jetbrains.compose.web.css.CSSSizeValue
-import org.jetbrains.compose.web.css.CSSUnit
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 
 @Composable
 fun TestimonialSection() {
@@ -145,6 +143,10 @@ fun createTestimonialCard(
                     selectedPage = selectedPage,
                     testimonial = testimonial
                 )
+            )
+            .transition(
+                CSSTransition(property = "visibility", duration = 300.ms),
+                CSSTransition(property = "opacity", duration = 300.ms)
             ),
         testimonial = testimonial,
         breakpoint = breakpoint
