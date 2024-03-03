@@ -20,6 +20,12 @@ object Constants {
 object Res {
     object Image {
         const val ABOUT = "about_image.png"
+        const val AVATAR1 = "avatar1.png"
+        const val AVATAR2 = "avatar2.png"
+        const val AVATAR3 = "avatar3.png"
+        const val AVATAR4 = "avatar4.png"
+        const val AVATAR5 = "avatar5.png"
+        const val AVATAR6 = "avatar6.png"
         const val BACKGROUND = "background.svg"
         const val LOGO = "logo.svg"
         const val MAIN = "main_image.png"
@@ -40,6 +46,7 @@ object Res {
         const val LINK = "link_icon.svg"
         const val SEO = "seo_icon.svg"
         const val SHIELD = "shield_icon.svg"
+        const val STAR = "star_icon.svg"
         const val USER = "user_icon.svg"
         const val WEB = "web_icon.svg"
     }
