@@ -5,8 +5,8 @@ import com.omega.san.components.ExperienceCard
 import com.omega.san.components.SectionTitle
 import com.omega.san.model.Experience
 import com.omega.san.model.Section
-import com.omega.san.util.Constants
 import com.omega.san.util.Constants.SECTION_WIDTH
+import com.omega.san.util.ObserveViewPortEntered
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
@@ -33,6 +33,15 @@ fun ExperienceSection() {
 @Composable
 fun ExperienceContent() {
     val breakpoint = rememberBreakpoint()
+    var animatedMargin by remember { mutableStateOf(200.px) }
+
+    ObserveViewPortEntered(
+        sectionId = Section.Experience.id,
+        distanceFromTop = 500.0,
+        onViewportEntered = {
+            animatedMargin = 50.px
+        }
+    )
     Column(
         modifier = Modifier
             .fillMaxWidth(
@@ -54,7 +63,8 @@ fun ExperienceContent() {
             ExperienceCard(
                 breakpoint = breakpoint,
                 active = experience == Experience.First,
-                experience = experience
+                experience = experience,
+                animatedMargin = animatedMargin
             )
         }
 

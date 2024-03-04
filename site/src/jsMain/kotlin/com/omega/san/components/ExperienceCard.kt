@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import com.omega.san.model.Experience
 import com.omega.san.model.Theme
 import com.omega.san.util.Constants.FONT_FAMILY
+import com.varabyte.kobweb.compose.css.CSSTransition
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
@@ -17,9 +18,7 @@ import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
-import org.jetbrains.compose.web.css.LineStyle
-import org.jetbrains.compose.web.css.percent
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -27,7 +26,8 @@ import org.jetbrains.compose.web.dom.Text
 fun ExperienceCard(
     breakpoint: Breakpoint,
     active: Boolean = false,
-    experience: Experience
+    experience: Experience,
+    animatedMargin: CSSSizeValue<CSSUnit.px>
 ) {
     SimpleGrid(
         modifier = Modifier
@@ -45,7 +45,8 @@ fun ExperienceCard(
         ExperienceDetails(
             breakpoint = breakpoint,
             active = active,
-            experience = experience
+            experience = experience,
+            animatedMargin = animatedMargin
         )
     }
 }
@@ -80,7 +81,8 @@ fun ExperienceDescription(
 fun ExperienceDetails(
     breakpoint: Breakpoint,
     active: Boolean,
-    experience: Experience
+    experience: Experience,
+    animatedMargin: CSSSizeValue<CSSUnit.px>
 ) {
     Row(
         modifier = Modifier
@@ -93,7 +95,15 @@ fun ExperienceDetails(
         }
         Column(
             modifier = Modifier
-                .fillMaxSize(),
+                .fillMaxSize()
+                .margin(left = animatedMargin)
+                .transition(
+                    CSSTransition(
+                        property = "margin",
+                        duration = 500.ms,
+                        delay = experience.ordinal * 25.ms
+                    )
+                ),
             verticalArrangement = Arrangement.Center
         ) {
             P(
