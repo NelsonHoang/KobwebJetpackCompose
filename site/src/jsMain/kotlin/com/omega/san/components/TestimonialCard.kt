@@ -68,11 +68,11 @@ fun TestimonialCard(
                 ) {
                     Text(testimonial.profession)
                 }
-                if (breakpoint < Breakpoint.MD) {
+                if (breakpoint <= Breakpoint.MD) {
                     RatingBar()
                 }
             }
-            if (breakpoint >= Breakpoint.MD) {
+            if (breakpoint > Breakpoint.MD) {
                 Spacer()
                 RatingBar()
             }

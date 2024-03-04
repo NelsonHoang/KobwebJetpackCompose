@@ -76,7 +76,9 @@ fun TestimonialCards(breakpoint: Breakpoint, selectedPage: Int) {
     val testimonial2 =
         listOf(Testimonial.Second, Testimonial.Fourth, Testimonial.Sixth)
     SimpleGrid(
-        modifier = Modifier.margin(bottom = 40.px),
+        modifier = Modifier
+            .fillMaxWidth()
+            .margin(bottom = 40.px),
         numColumns = numColumns(base = 1, md = 2)
     ) {
         Box {
@@ -128,8 +130,11 @@ fun createTestimonialCard(
 ) {
     TestimonialCard(
         modifier = Modifier
+            .fillMaxWidth(
+                if (breakpoint >= Breakpoint.MD) 90.percent
+                else 100.percent
+            )
             .margin(
-                right = if (breakpoint > Breakpoint.SM) 40.px else 0.px,
                 bottom = if (breakpoint > Breakpoint.MD) 0.px else 40.px
             )
             .visibility(
