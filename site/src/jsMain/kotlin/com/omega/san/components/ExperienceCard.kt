@@ -68,6 +68,7 @@ fun ExperienceDescription(
                 .margin(topBottom = 0.px)
                 .fontFamily(FONT_FAMILY)
                 .fontSize(14.px)
+                .lineHeight(1.6)
                 .fontWeight(FontWeight.Normal)
                 .color(if (active) Colors.White else Theme.Secondary.rgb)
                 .toAttrs()
@@ -96,12 +97,12 @@ fun ExperienceDetails(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .margin(left = animatedMargin)
+                .margin(left = if (breakpoint <= Breakpoint.SM) 0.px else animatedMargin)
                 .transition(
                     CSSTransition(
                         property = "margin",
                         duration = 500.ms,
-                        delay = experience.ordinal * 25.ms
+                        delay = experience.ordinal * 100.ms
                     )
                 ),
             verticalArrangement = Arrangement.Center
