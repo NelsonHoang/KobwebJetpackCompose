@@ -21,7 +21,12 @@ import org.jetbrains.compose.web.dom.*
 @Composable
 fun ContactForm(breakpoint: Breakpoint) {
     Form(
-        action = ""
+        action = "https://formspree.io/f/mpzvlawe",
+        attrs = Modifier
+            .attrsModifier {
+                attr("method", "POST")
+            }.toAttrs()
+
     ) {
         Label(
             attrs = Modifier
@@ -50,6 +55,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 )
                 .attrsModifier {
                     attr("placeholder", "Full Name")
+                    attr("name", "name")
                     attr("required", "true")
                 }
                 .toAttrs()
@@ -81,6 +87,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 )
                 .attrsModifier {
                     attr("placeholder", "Email Address")
+                    attr("name", "email")
                     attr("required", "true")
                 }
                 .toAttrs()
@@ -111,6 +118,7 @@ fun ContactForm(breakpoint: Breakpoint) {
                 )
                 .attrsModifier {
                     attr("placeholder", "Your Message")
+                    attr("name", "message")
                     attr("required", "true")
                 }
                 .toAttrs()
