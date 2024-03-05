@@ -26,14 +26,15 @@ fun ContactForm(breakpoint: Breakpoint) {
         Label(
             attrs = Modifier
                 .classNames("form-label")
-                .toAttrs()
+                .toAttrs(),
+            forId = INPUT_NAME_ID
         ) {
             Text("Name")
         }
         Input(
             type = InputType.Text,
             attrs = InputStyle.toModifier()
-                .id("inputName")
+                .id(INPUT_NAME_ID)
                 .classNames("form-control")
                 .margin(bottom = 10.px)
                 .width(
@@ -56,14 +57,15 @@ fun ContactForm(breakpoint: Breakpoint) {
         Label(
             attrs = Modifier
                 .classNames("form-label")
-                .toAttrs()
+                .toAttrs(),
+            forId = INPUT_EMAIL_ID
         ) {
             Text("Email")
         }
         Input(
             type = InputType.Email,
             attrs = InputStyle.toModifier()
-                .id("inputEmail")
+                .id(INPUT_EMAIL_ID)
                 .classNames("form-control")
                 .margin(bottom = 10.px)
                 .width(
@@ -92,7 +94,7 @@ fun ContactForm(breakpoint: Breakpoint) {
         }
         TextArea(
             attrs = InputStyle.toModifier()
-                .id("inputMessage")
+                .id(INPUT_MESSAGE_ID)
                 .classNames("form-control")
                 .height(150.px)
                 .margin(bottom = 20.px)
@@ -114,9 +116,9 @@ fun ContactForm(breakpoint: Breakpoint) {
                 .toAttrs()
         )
         Box(
-           modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             contentAlignment = Alignment.Center
-        ){
+        ) {
             Button(
                 attrs = MainButtonStyle.toModifier()
                     .height(40.px)
@@ -133,3 +135,7 @@ fun ContactForm(breakpoint: Breakpoint) {
 
     }
 }
+
+private const val INPUT_EMAIL_ID = "inputEmail"
+private const val INPUT_MESSAGE_ID = "inputMessage"
+private const val INPUT_NAME_ID = "inputName"
