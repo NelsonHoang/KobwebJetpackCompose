@@ -18,6 +18,10 @@ kobweb {
             description.set("Powered by Kobweb")
 
             head.add {
+                link {
+                    rel = "stylesheet"
+                    href = "https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900"
+                }
                 script {
                     src = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                 }
