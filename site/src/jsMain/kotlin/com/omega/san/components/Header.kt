@@ -25,7 +25,7 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 
 @Composable
-fun Header() {
+fun Header(onMenuClicked: () -> Unit) {
     val breakpoint = rememberBreakpoint()
     Row(
         modifier = Modifier
@@ -34,7 +34,10 @@ fun Header() {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        LeftSide(breakpoint = breakpoint)
+        LeftSide(
+            breakpoint = breakpoint,
+            onMenuClicked = onMenuClicked
+        )
         if (breakpoint > Breakpoint.MD) {
             RightSide()
         }
@@ -42,14 +45,21 @@ fun Header() {
 }
 
 @Composable
-fun LeftSide(breakpoint: Breakpoint) {
+fun LeftSide(
+    breakpoint: Breakpoint,
+    onMenuClicked: () -> Unit
+) {
     Row(verticalAlignment = Alignment.CenterVertically) {
         if (breakpoint < Breakpoint.MD) {
             FaBars(
-                modifier = Modifier.margin(
-                    right = 15.px,
-                    bottom = 6.px
-                ),
+                modifier = Modifier
+                    .margin(
+                        right = 15.px,
+                        bottom = 6.px
+                    )
+                    .onClick {
+                        onMenuClicked()
+                    },
                 size = IconSize.XL
             )
         }
